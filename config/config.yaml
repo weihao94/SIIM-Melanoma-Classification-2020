@@ -1,0 +1,42 @@
+# INITIAL SETTINGS
+DEVICE: GPU # or "GPU"
+SEED: 42 # Use different seed for Stratified-K-Fold
+FOLDS: 5 # Number of folds
+IMG_SIZES: 768 # Image size to choose for each fold, either 128, 192, 256, 384, 512, 768
+INC2018: 0 # Include old comp data? YES=1, NO=0
+INC2019: 0
+
+# BATCH SIZE AND EPOCHS
+BATCH_SIZE: 1
+EPOCHS: 12
+
+# WHICH EFFICIENTNET TO USE
+# EFF_NETS: [6, 6, 6, 6, 6]
+EFF_NET: EfficientNetB3
+
+# TEST TIME AUGMENTATION STEPS
+TTA: 11
+
+# AUGMENTATIONS
+ROT_: 180.0
+SHR_: 1.5
+HZOOM_: 6.0
+WZOOM_: 6.0
+HSHIFT_: 6.0
+WSHIFT_: 6.0
+CROP_SIZE: { 256: 250, 384: 370, 512: 500, 768: 750 }
+
+# HYPERPARAMETERS FOR TRAINING
+# LEARNING RATE
+LR_START: 0.000003
+LR_MAX: 0.000020
+LR_MIN: 0.000001
+LR_RAMPUP_EPOCHS: 5
+LR_SUSTAIN_EPOCHS: 0
+LR_EXP_DECAY: 0.8
+
+# OPTIMIZER
+OPTIMIZER: tf.keras.optimizers.Adam(learning_rate=0.001)
+
+# LOSS
+LOSS: tf.keras.losses.BinaryCrossentropy(label_smoothing=0.05)
