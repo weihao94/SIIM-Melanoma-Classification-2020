@@ -1,6 +1,5 @@
 pyyaml
-google-cloud-storage
 pillow
 tensorflow==2.2.0
-install opencv-python
-environment=tf2exam
+opencv-python
+efficientnet==1.1.1
